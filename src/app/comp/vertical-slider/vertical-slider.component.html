@@ -1,0 +1,23 @@
+<div id="theContainer">
+  <button id="buttonZoomIn" (click)="onClickZoomIn($event)" mat-icon-button>
+    <mat-icon svgIcon="zoom-in"></mat-icon>
+  </button>
+
+  <div id="theSliderBody">
+    <div id="theSliderBase"></div>
+    <div id="theSliderGuide"></div>
+    <div
+      id="theSliderHandle"
+      cdkDrag
+      cdkDragLockAxis="y"
+      cdkDragBoundary="#theSliderBody"
+      [cdkDragFreeDragPosition]="dragPosition"
+      (cdkDragMoved)="onDragMoved($event)"
+      (cdkDragEnded)="onDragEnded($event)"
+    ></div>
+  </div>
+
+  <button id="buttonZoomOut" (click)="onClickZoomOut($event)" mat-icon-button>
+    <mat-icon svgIcon="zoom-out"></mat-icon>
+  </button>
+</div>

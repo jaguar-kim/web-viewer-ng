@@ -1,0 +1,118 @@
+<div id="the-body">
+  <div id="the-container">
+    <!--  title  -->
+    <div id="title">
+      <span id="patient-info"><span>da sung mun</span>&nbsp;<span>#0005622</span></span>
+      <span id="logo-box"><img src="./images/DentOne-Logo.png" /> </span>
+    </div>
+
+    <!--  body  -->
+    <div id="body">
+      <canvas
+        id="webgl-canvas"
+        #sceneCanvas
+        (pointerdown)="onPointerDown($event)"
+        (pointermove)="onPointerMove($event)"
+        (pointerup)="onPointerUp($event)"
+      >
+        Your brower doesn't appear to support the canvas element.
+      </canvas>
+
+      <div id="main-toolbar">
+        <span style="border-right: solid 2px #fff8">
+          <button mat-icon-button (click)="onModePan()">
+            <mat-icon *ngIf="isPanMode" svgIcon="pan-mode-active"></mat-icon>
+            <mat-icon *ngIf="isPanMode === false" svgIcon="pan-mode"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onModeTrackBall()">
+            <mat-icon *ngIf="isTrackBallMode" svgIcon="track-ball-mode-active"></mat-icon>
+            <mat-icon *ngIf="isTrackBallMode === false" svgIcon="track-ball-mode"></mat-icon>
+          </button>
+        </span>
+
+        <span>
+          <button mat-icon-button (click)="onDirectionRight()">
+            <mat-icon svgIcon="view-right-both"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onDirectionFront()">
+            <mat-icon svgIcon="view-front-both"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onDirectionLeft()">
+            <mat-icon svgIcon="view-left-both"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onDirectionRear()">
+            <mat-icon svgIcon="view-rear-both"></mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="onTopView()">
+            <mat-icon svgIcon="view-top-maxi"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onBottomView()">
+            <mat-icon svgIcon="view-bottom-mand"></mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="onUpperHalfView()">
+            <mat-icon svgIcon="view-front-maxi"></mat-icon>
+          </button>
+          <button mat-icon-button (click)="onLowerHalfView()">
+            <mat-icon svgIcon="view-front-mand"></mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="onDirectionHome(theVerticalSlider)">
+            <mat-icon svgIcon="view-home"></mat-icon>
+          </button>
+        </span>
+      </div>
+
+      <div id="zoom-toolbar">
+        <vertical-slider
+          #theVerticalSlider
+          [zoom-steps-count]="20"
+          (current-step)="onChangeCurrentStep($event)"
+        ></vertical-slider>
+      </div>
+    </div>
+
+    <!--  footer  -->
+    <div id="footer">
+      <div id="toolsOrthoSteps">
+        <button mat-icon-button (click)="onFirstStep()">
+          <mat-icon svgIcon="go-first-step"></mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onPreviousStep()">
+          <mat-icon svgIcon="go-previous-step"></mat-icon>
+        </button>
+
+        <button mat-icon-button *ngIf="isAnimate === false" (click)="onStartAnimation()">
+          <mat-icon svgIcon="start-animation"></mat-icon>
+        </button>
+
+        <button mat-icon-button *ngIf="isAnimate" (click)="onStopAnimation()">
+          <mat-icon svgIcon="stop-animation"></mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onNextStep()">
+          <mat-icon svgIcon="go-next-step"></mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onLastStep()">
+          <mat-icon svgIcon="go-last-step"></mat-icon>
+        </button>
+
+        <span style="display: inline-block; padding: 15px; color: #07a2e8">{{
+          this.glViewerService.selectedStepCaption
+        }}</span>
+      </div>
+
+      <div style="flex: 1; min-width: 200px; max-width: 600px; height: 60px">
+        <ortho-step-slider
+          [step-count]="totalStepCount"
+          [selected-step-index]="selectedStepIndex"
+          (current-step)="onStepChange($event)"
+        >
+        </ortho-step-slider>
+      </div>
+    </div>
+  </div>
+</div>

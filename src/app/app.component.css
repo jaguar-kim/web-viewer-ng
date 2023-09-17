@@ -1,0 +1,161 @@
+/* #the-body {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  color: white;
+  background-color: skyblue;
+} */
+#the-body {
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  color: white;
+  background-color: skyblue;
+}
+
+/* ======================== */
+#the-container {
+  display: block;
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  background-color: skyblue;
+}
+
+/* ======================== */
+#title {
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 50px;
+  display: flex;
+
+  background-color: #272625;
+}
+
+#title > #patient-info {
+  display: flex;
+  position: absolute;
+
+  left: 15px;
+  top: 0px;
+  bottom: 0px;
+
+  align-items: center;
+}
+
+#title > #patient-info > span {
+  display: inline-block;
+  padding-top: 2px;
+  margin: 10px;
+  color: #eee;
+}
+
+#title > #logo-box {
+  display: flex;
+  position: absolute;
+
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================== */
+#body {
+  display: block;
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 51px;
+  bottom: 89px;
+
+  background-color: hotpink;
+}
+
+#body > #main-toolbar {
+  position: absolute;
+  top: 6px;
+  left: 30px;
+  right: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff0;
+}
+
+#main-toolbar > span {
+  display: inline-block;
+  margin: 0px;
+  padding: -10px 20px -10px 20px;
+
+  color: white;
+}
+
+#body > #zoom-toolbar {
+  position: absolute;
+
+  width: 48px;
+  height: 362px;
+
+  right: 15px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#body > #webgl-canvas {
+  display: block;
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+
+  width: 100vw;
+  height: calc(100vh - 89pt);
+}
+
+/* ======================== */
+#footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 89px;
+  bottom: 0px;
+
+  padding-left: 15px;
+  padding-right: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #5a5a5a;
+}
+
+#footer > #toolsOrthoSteps {
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  max-width: 320px;
+}

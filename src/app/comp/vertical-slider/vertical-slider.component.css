@@ -1,0 +1,75 @@
+#theContainer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  border: solid 1px #eee2;
+  border-radius: 24px;
+
+  margin: auto;
+}
+
+#buttonZoomIn {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+
+#buttonZoomOut {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+}
+
+#theSliderBody {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 55px;
+  bottom: 55px;
+}
+
+#theSliderBase {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 50%;
+  height: 3px;
+
+  /* -ms-transform: translateY(+50%);
+  transform: translateY(+50%); */
+
+  background-color: #07a2e8;
+}
+
+#theSliderGuide {
+  position: absolute;
+
+  top: 5px;
+  bottom: 5px;
+  left: 22px;
+  width: 2px;
+
+  background-color: yellowgreen;
+  border-radius: 2px;
+}
+
+#theSliderHandle {
+  position: absolute;
+
+  left: 9px;
+  right: 9px;
+  height: 10px;
+
+  cursor: ns-resize;
+
+  border-radius: 5px;
+  background-color: skyblue;
+}
+
+#theSliderHandle:active {
+  background-color: pink;
+  box-shadow: 0px 8px 65px 0px white;
+}

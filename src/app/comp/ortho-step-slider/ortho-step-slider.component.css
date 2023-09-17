@@ -1,0 +1,52 @@
+#theContainer {
+  width: 100%;
+  height: 46px;
+
+  padding-top: 10px;
+}
+
+#theSlider {
+  position: relative;
+  left: 9px;
+  top: -29px;
+  width: calc(100% - 24px);
+}
+
+#theLabels {
+  position: relative;
+  font-size: 10pt;
+
+  top: 21px;
+  height: 16px;
+
+  margin-left: 1px;
+  margin-right: 8px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+/* ------------------------ */
+.label {
+  flex: 1;
+
+  padding-right: 2px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: right;
+  vertical-align: top;
+
+  height: 15px;
+
+  border-right: solid 2px rgba(255, 255, 0, 0.23);
+}
+
+.label:first-child {
+  max-width: 15px;
+  min-width: 15px;
+}
+
+.label:nth-child(5n) {
+  color: white;
+  border-right: solid 2px rgba(255, 255, 0, 0.7);
+  height: 18px;
+}

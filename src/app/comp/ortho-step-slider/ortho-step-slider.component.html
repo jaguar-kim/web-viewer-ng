@@ -1,0 +1,12 @@
+<div id="theContainer">
+  <div id="theLabels">
+    <span class="label">1</span>
+    <span *ngFor="let i of labelArray" class="label"
+      ><span *ngIf="i % 5 === 0 || n < 11 || i === n">{{ i }}</span></span
+    >
+  </div>
+
+  <mat-slider id="theSlider" [min]="1" [max]="stepCount" [step]="1" [showTickMarks]="true" [discrete]="true">
+    <input matSliderThumb [value]="selectedStepIndex" (valueChange)="onStepChange($event)" />
+  </mat-slider>
+</div>
